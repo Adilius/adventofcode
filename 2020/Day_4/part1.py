@@ -17,15 +17,13 @@ for line in lines:
             passport.append(each)
 
 def validatePassport(passport):
-    if len(passport) <= 6:
+    if len(passport) <= 6 or len(passport) >= 9:
         return False
-    if len(passport) == 8:
-        return True
     if len(passport) == 7:
         for each in passport:
             if each[:3] == "cid":
                 return False
-        return True
+    return True
 
 numberOfValidPassports = 0
 for i in range(len(passportArray)):
